@@ -58,16 +58,15 @@ ScrollTrigger.refresh();
 
 
 function textSplitting(){
-    var allH1 = document.querySelectorAll("#page2 h1");
-    console.log(allH1);
-
+  var allH1 = document.querySelectorAll("#page2 h1");
+  console.log(allH1);
 
     allH1.forEach(function(elem) {
         var h1Text =  elem.textContent ;
         var clutter = "";
         var splittedText = h1Text.split("");
-        splittedText.forEach(e => clutter+=`<span>${e}</span>`);
-        elem.innerHtml = clutter ;
+        splittedText.forEach(e => clutter += `<span>${e}</span>`);
+        elem.innerHTML = clutter ;
     });
 }
 
@@ -78,7 +77,7 @@ function gsapAnimation(){
         scrollTrigger:{
             trigger: "#page2 h1 span",
             scroller: "#main",
-            markers:true ,
+            markers : true,
             start:"top 50%" ,
             end: "top 10%" ,
             scrub: 1
@@ -88,4 +87,4 @@ function gsapAnimation(){
 
 locoScroll();
 textSplitting();
-gsapAnimation();
+gsapAnimation(); // after text splitting is done
